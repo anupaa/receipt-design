@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Donation Receipt - RC2024-1234567</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f8fafc;
+      color: #1e293b;
+      margin: 0;
+      padding: 2rem;
+    }
+    .receipt {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .logo img {
+      max-width: 64px;
+      max-height: 64px;
+      border-radius: 8px;
+    }
+    .org-details h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+    .org-details p {
+      font-size: 0.875rem;
+      color: #475569;
+      margin: 2px 0;
+    }
+    .section {
+      margin-top: 2rem;
+    }
+    .section h2 {
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      color: #1e293b;
+      border-bottom: 2px solid #cbd5e1;
+      padding-bottom: 0.25rem;
+    }
+    .info-row {
+      display: flex;
+      margin-bottom: 0.75rem;
+    }
+    .label {
+      font-weight: 600;
+      width: 200px;
+      color: #334155;
+    }
+    .value {
+      flex: 1;
+      color: #1e293b;
+    }
+    .highlight {
+      font-size: 1.25rem;
+      font-weight: bold;
+      color: #059669;
+    }
+    .tax-note {
+      background: #fffbeb;
+      border-left: 4px solid #facc15;
+      padding: 1rem;
+      margin-top: 1rem;
+      font-size: 0.875rem;
+      color: #374151;
+      border-radius: 8px;
+    }
+    .signature {
+      margin-top: 3rem;
+    }
+    .sig-line {
+      border-top: 2px solid #1e293b;
+      width: 250px;
+      margin-top: 3rem;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      font-style: italic;
+      color: #475569;
+    }
+    @media print {
+      body {
+        background: white;
+        padding: 1rem;
+      }
+      .receipt {
+        box-shadow: none;
+        border: 1px solid black;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="receipt">
+    <div class="header">
+      <div class="logo">
+        <img src="https://crowdera-platform.s3.ap-south-1.amazonaws.com/gocrowdera/background/1603f06a-9d15-48ed-b56e-e6dff5aa0ae6_thumbnail_school-logo-5s.png" alt="Logo" />
+      </div>
+      <div class="org-details">
+        <h1>Helping Hands Charity</h1>
+        <p>Registered Address: 123 Charity Lane, London, UK</p>
+        <p>Registration Number: 201234567D</p>
+        <p>Tax-Exemption Reg. No.: N/A</p>
+        <p>
+          Website: <a href="https://www.helpinghands.org.uk">www.helpinghands.org.uk</a> |
+          Email: <a href="mailto:contact@helpinghands.org.uk">contact@helpinghands.org.uk</a> |
+          Phone: +44 20 1234 5678
+        </p>
+      </div>
+    </div>
+
+    <div class="section">
+      <h2>Donation Receipt</h2>
+      <div class="info-row"><div class="label">Receipt No.:</div><div class="value">RC2024-1234567</div></div>
+      <div class="info-row"><div class="label">Date of Issue:</div><div class="value">15/03/2024</div></div>
+    </div>
+
+    <div class="section">
+      <h2>Donor Information</h2>
+      <div class="info-row"><div class="label">Name:</div><div class="value">John Smith</div></div>
+      <div class="info-row"><div class="label">Email Address:</div><div class="value">john.smith@example.com</div></div>
+      <div class="info-row"><div class="label">Address:</div><div class="value">Manchester, UK, M1 1AA</div></div>
+      <div class="info-row"><div class="label">Tax ID:</div><div class="value">–</div></div>
+    </div>
+
+    <div class="section">
+      <h2>Donation Details</h2>
+      <div class="info-row"><div class="label">Amount Donated:</div><div class="value highlight">£250.00</div></div>
+      <div class="info-row"><div class="label">Amount in Words:</div><div class="value"><em>Two Hundred and Fifty Pounds</em></div></div>
+      <div class="info-row"><div class="label">Mode of Payment:</div><div class="value">Bank Transfer</div></div>
+      <div class="info-row"><div class="label">Transaction ID / Reference:</div><div class="value" style="font-family: monospace;">TXM28248315123456</div></div>
+      <div class="info-row"><div class="label">Purpose of Donation:</div><div class="value">General Fund – Children's Education</div></div>
+      <div class="info-row"><div class="label">Date of Donation:</div><div class="value">15/03/2024</div></div>
+    </div>
+
+    <div class="section">
+      <h2>Tax Deduction Disclaimer</h2>
+      <div class="tax-note">
+        If the above charity is recognized as a tax-exempt organization in the donor’s country or jurisdiction and holds an active tax-exemption registration number, then the donation may qualify for tax benefits as per applicable local laws.<br><br>
+        Donors are advised to retain this receipt and consult their local tax advisor or authorities for claiming any deduction.<br><br>
+        <strong>Note:</strong> This receipt alone does not guarantee tax deductibility unless the organization is duly registered and recognized in the donor’s country for tax-exempt purposes.
+      </div>
+    </div>
+
+    <div class="signature">
+      <div class="sig-line"></div>
+      <p><strong>James Wilson</strong><br>
+      Executive Director<br>
+      For Helping Hands Charity</p>
+    </div>
+
+    <div class="footer">
+      “Thank you for your generosity. Your support enables us to make a difference globally.”
+    </div>
+  </div>
+</body>
+</html>
