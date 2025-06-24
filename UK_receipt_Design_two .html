@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UK Charity Donation Receipt</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+            border: 1px solid #ddd;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        .charity-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .charity-details {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .receipt-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 30px 0 20px;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .receipt-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            width: 200px;
+            color: var(--primary-color);
+        }
+
+        .info-value {
+            flex: 1;
+        }
+
+        .gift-aid {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-color);
+            margin: 25px 0;
+            font-size: 14px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .signature {
+            margin-top: 50px;
+        }
+
+        .signature-line {
+            border-top: 1px solid var(--dark-color);
+            width: 200px;
+            margin-top: 50px;
+        }
+
+        .signature-details {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        .no-logo {
+            width: 100px;
+            height: 100px;
+            background-color: var(--secondary-color);
+            color: white;
+            font-size: 48px;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            border-radius: 50%;
+        }
+
+        .digital-signature {
+            max-width: 200px;
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                padding: 15px;
+                font-size: 12px;
+                box-shadow: none;
+                border: 1px solid #ddd;
+            }
+
+            .gift-aid {
+                padding: 15px;
+                border-left: 2px solid var(--secondary-color);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+
+        <img src="https://crowdera-platform.s3.ap-south-1.amazonaws.com/gocrowdera/background/1603f06a-9d15-48ed-b56e-e6dff5aa0ae6_thumbnail_school-logo-5s.png"
+            alt="Helping Hands Charity Logo" class="logo">
+
+        <div class="charity-name">Helping Hands Charity</div>
+        <div class="charity-details">Registered Charity Number: 1234567</div>
+
+        <div class="charity-details">Company Number: 89101112</div>
+
+        <div class="charity-details">Registered Address: 123 Charity Lane, London, EC1A 1BB</div>
+        <div class="charity-details">
+            Website: <a href="www.helpinghands.org.uk">www.helpinghands.org.uk</a> |
+            Email: <a href="mailto:contact@helpinghands.org.uk">contact@helpinghands.org.uk</a>
+            | Phone: +44 20 1234 5678
+        </div>
+    </div>
+
+    <div class="receipt-title">Donation Receipt</div>
+
+    <div class="receipt-info">
+        <div>
+            <div class="info-row">
+                <div class="info-label">Receipt Number:</div>
+                <div class="info-value">DON-2024-12345</div>
+            </div>
+        </div>
+        <div>
+            <div class="info-row">
+                <div class="info-label">Date of Issue:</div>
+                <div class="info-value">15/05/2024</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section-title">Donor Details</div>
+    <div class="info-row">
+        <div class="info-label">Name:</div>
+        <div class="info-value">John Smith</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Address:</div>
+        <div class="info-value">456 Donor Street, Manchester, M1 1AA</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Email:</div>
+        <div class="info-value">john.smith@example.com</div>
+    </div>
+
+    <div class="info-row">
+        <div class="info-label">Phone (Optional):</div>
+        <div class="info-value">+44 7700 900123</div>
+    </div>
+
+
+    <div class="section-title">Donation Details</div>
+    <div class="info-row">
+        <div class="info-label">Amount Donated:</div>
+        <div class="info-value">£250.00</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Amount in Words:</div>
+        <div class="info-value">Two Hundred and Fifty Pounds</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Payment Method:</div>
+        <div class="info-value">Bank Transfer</div>
+    </div>
+
+    <div class="info-row">
+        <div class="info-label">Transaction Reference:</div>
+        <div class="info-value">BANK-TR-987654</div>
+    </div>
+
+    <div class="info-row">
+        <div class="info-label">Purpose of Donation:</div>
+        <div class="info-value">General Fund</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Date of Donation:</div>
+        <div class="info-value">10/05/2024</div>
+    </div>
+
+    <div class="gift-aid">
+        <strong>Gift Aid Declaration</strong> (Optional)<br><br>
+
+        This donation may qualify for Gift Aid, allowing us to claim an additional 25p for every £1 donated from HM
+        Revenue & Customs (HMRC), at no extra cost to the donor.
+
+        <div class="disclaimer">
+            <strong>Disclaimer:</strong><br>
+            To claim Gift Aid, the donor must be a UK taxpayer and have paid Income or Capital Gains Tax at least equal
+            to the amount reclaimed by all charities and CASCs.<br>
+
+        </div>
+    </div>
+
+    <div class="signature">
+
+        <img src="https://example.com/signature.png" alt="Digital Signature" class="digital-signature">
+
+        <div class="signature-details">
+            Authorized Signatory<br>
+            James Wilson<br>
+            Position: Treasurer<br>
+            For Helping Hands Charity
+        </div>
+    </div>
+</body>
+
+</html>
