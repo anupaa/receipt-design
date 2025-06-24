@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donation Receipt</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: var(--box-shadow);
+            border-radius: var(--border-radius);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .logo {
+            max-width: 200px;
+            margin-bottom: 15px;
+        }
+
+        .org-name {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .org-details {
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .receipt-title {
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 30px 0 20px;
+            text-transform: uppercase;
+            color: var(--secondary-color);
+            padding: 10px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+
+        .receipt-info {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 25px;
+            background-color: var(--light-color);
+            padding: 15px;
+            border-radius: var(--border-radius);
+        }
+
+        .section-title {
+            font-weight: bold;
+            font-size: 18px;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 8px;
+            color: var(--primary-color);
+        }
+
+        .info-row {
+            display: flex;
+            margin-bottom: 12px;
+        }
+
+        .info-label {
+            font-weight: bold;
+            width: 250px;
+            color: var(--primary-color);
+        }
+
+        .info-value {
+            flex: 1;
+        }
+
+        .tax-info {
+            background-color: var(--light-color);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--secondary-color);
+            margin: 25px 0;
+            font-size: 14px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .disclaimer {
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 15px;
+            color: #666;
+        }
+
+        .signature {
+            margin-top: 50px;
+        }
+
+        .signature-line {
+            border-top: 1px solid var(--dark-color);
+            width: 200px;
+            margin-top: 50px;
+        }
+
+        .signature-details {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--primary-color);
+        }
+
+        .digital-signature {
+            max-width: 200px;
+            max-height: 80px;
+            margin-bottom: 10px;
+        }
+
+        @media print {
+            body {
+                padding: 15px;
+                font-size: 12px;
+                box-shadow: none;
+            }
+
+            .tax-info {
+                padding: 15px;
+                border-left: 2px solid var(--secondary-color);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="https://crowdera-platform.s3.ap-south-1.amazonaws.com/gocrowdera/background/6c2496c4-7dc0-4978-90e6-622dc9c54037_thumbnail_school-logo-2.png"
+            alt="logo_image" class="logo">
+        <div class="org-name">Singapore Children's Foundation</div>
+        <div class="org-details">UEN: 201234567D</div>
+        <div class="org-details">IPC Registration No: IPC000123</div>
+        <div class="org-details">Registered Address: 123 Orchard Road, #01-01, Singapore 238853</div>
+        <div class="org-details">
+            Website: <a href="https://www.charity.org.sg">www.charity.org.sg</a> |
+            Email: <a href="mailto:contact@charity.org.sg">contact@charity.org.sg</a> |
+            Phone: +65 6123 4567
+        </div>
+    </div>
+
+    <div class="receipt-title">DONATION RECEIPT</div>
+
+    <div class="receipt-info">
+        <div class="info-row">
+            <div class="info-label">Receipt No.:</div>
+            <div class="info-value">RC2024-001234</div>
+        </div>
+        <div class="info-row">
+            <div class="info-label">Date of Issue:</div>
+            <div class="info-value">15/03/2024</div>
+        </div>
+    </div>
+
+    <div class="section-title">Donor Details</div>
+    <div class="info-row">
+        <div class="info-label">Full Name (as per NRIC / FIN / UEN):</div>
+        <div class="info-value">Tan Wei Ming</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">NRIC/FIN/UEN:</div>
+        <div class="info-value">51234567A</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Email Address:</div>
+        <div class="info-value">tanweiming@email.com</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Mailing Address:</div>
+        <div class="info-value">456 Donor Street, #12-34, Singapore 654321</div>
+    </div>
+
+    <div class="section-title">Donation Details</div>
+    <div class="info-row">
+        <div class="info-label">Amount Donated (SGD):</div>
+        <div class="info-value">SGD 500.00</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Amount in Words:</div>
+        <div class="info-value">Five Hundred Dollars Only</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Mode of Payment:</div>
+        <div class="info-value">PayNow</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Transaction/Reference ID:</div>
+        <div class="info-value">TXM28248315123456</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Purpose (if any):</div>
+        <div class="info-value">General Fund - Children's Education Program</div>
+    </div>
+    <div class="info-row">
+        <div class="info-label">Date of Donation:</div>
+        <div class="info-value">15/03/2024</div>
+    </div>
+
+    <div class="tax-info">
+        <div class="section-title">Tax Deduction Clause (Applicable if IPC-Registered)</div>
+        <p>If the organization’s IPC registration is active on the date of this donation, the donor will be eligible for
+            a 2.5x tax deduction under Section 37(3)(c) of the Income Tax Act 1947.</p>
+        <p>Donation details may be auto-submitted to IRAS using the provided NRIC/FIN/UEN.</p>
+        <p>If the charity is not an IPC, this donation is gratefully acknowledged but is not eligible for tax deduction.
+        </p>
+    </div>
+
+    <div class="signature">
+        <div class="signature-line"></div>
+        <div class="signature-details">
+            (Sarah Lim Wei Ling)<br>
+            Designation: Executive Director<br>
+            For Singapore Children's Foundation
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; font-style: italic;">
+        “Your kindness fuels our mission. Thank you for your support.”
+    </div>
+</body>
+
+</html>

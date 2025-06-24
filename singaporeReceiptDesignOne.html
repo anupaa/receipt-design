@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Receipt - RC2024-001234</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background-color: #f8fafc;
+            padding: 20px;
+        }
+
+        .receipt-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-bottom: 2px solid #cbd5e1;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .charity-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-placeholder {
+            width: auto;
+            height: auto;
+            background: none;
+            padding: 0;
+        }
+
+        .logo-placeholder img {
+            max-width: 64px;
+            max-height: 64px;
+            width: auto;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+
+
+        .charity-details h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 0.25rem;
+        }
+
+        .charity-details p {
+            color: #64748b;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+
+        .receipt-number {
+            text-align: right;
+        }
+
+        .receipt-number .label {
+            font-size: 0.875rem;
+            color: #64748b;
+            font-weight: 500;
+            margin-bottom: 0.25rem;
+        }
+
+        .receipt-number .value {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1e293b;
+            border-bottom: 2px solid #cbd5e1;
+            padding-bottom: 0.5rem;
+            min-width: 200px;
+            display: inline-block;
+        }
+
+        /* Organization Details */
+        .org-details {
+            background: #f8fafc;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #374151;
+            min-width: 100px;
+        }
+
+        .detail-value {
+            color: #4b5563;
+        }
+
+        /* Receipt Title */
+        .receipt-title {
+            text-align: center;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .receipt-title h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        .issue-date {
+            color: #64748b;
+            font-weight: 600;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 1.5rem 2rem;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .section-card {
+            border: 1px solid #d1d5db;
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .donor-section {
+            background: #eff6ff;
+            border-color: #bfdbfe;
+        }
+
+        .donation-section {
+            background: #ecfdf5;
+            border-color: #bbf7d0;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .field-group {
+            margin-bottom: 1rem;
+        }
+
+        .field-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.25rem;
+        }
+
+        .field-value {
+            color: #1e293b;
+            border-bottom: 1px dotted #9ca3af;
+            padding-bottom: 0.25rem;
+            min-height: 1.5rem;
+        }
+
+        .amount-highlight {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #059669;
+        }
+
+        /* Tax Deduction Section */
+        .tax-section {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tax-section h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.75rem;
+        }
+
+        .tax-content {
+            font-size: 0.875rem;
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        .tax-content p {
+            margin-bottom: 0.75rem;
+        }
+
+        .tax-highlight {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        /* Signature Section */
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-top: 2rem;
+            padding-top: 1rem;
+        }
+
+        .signatory-info h3 {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 1.5rem;
+        }
+
+        .signature-line {
+            border-top: 2px solid #6b7280;
+            padding-top: 0.75rem;
+            width: 250px;
+        }
+
+        .signatory-name {
+            font-weight: 600;
+            color: #1e293b;
+            font-size: 1.125rem;
+        }
+
+        .signatory-title {
+            color: #64748b;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+        }
+
+        .stamp-area {
+            text-align: center;
+        }
+
+        .stamp-box {
+            width: 96px;
+            height: 96px;
+            border: 2px solid #6b7280;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            margin-bottom: 0.5rem;
+        }
+
+        .stamp-text {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #64748b;
+        }
+
+        /* Footer */
+        .footer {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-top: 1px solid #e2e8f0;
+            padding: 1.5rem 2rem;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 1.125rem;
+            font-weight: 500;
+            color: #374151;
+            font-style: italic;
+        }
+
+        /* Print Styles */
+        @media print {
+            @page {
+                margin: 0.75in;
+                size: A4;
+            }
+
+            body {
+                background: white;
+            }
+
+            .receipt-container {
+                box-shadow: none;
+                border: 1px solid #000;
+                margin: 0;
+                max-width: none;
+            }
+
+            .header,
+            .org-details,
+            .footer {
+                background: white !important;
+            }
+
+            .logo-placeholder {
+                background: #ccc !important;
+                color: #000 !important;
+            }
+
+            .receipt-number .value {
+                color: #000 !important;
+                border-bottom: 2px solid #000;
+            }
+
+            .section-card {
+                background: white !important;
+                border: 1px solid #666 !important;
+            }
+
+            .tax-section {
+                background: white !important;
+                border: 1px solid #666 !important;
+            }
+
+            .field-value {
+                border-bottom: 1px solid #000;
+            }
+
+            .signature-line {
+                border-top: 2px solid #000;
+            }
+
+            .stamp-box {
+                border: 2px solid #000;
+                background: white !important;
+            }
+
+            /* Prevent page breaks within sections */
+            .section-card,
+            .tax-section,
+            .signature-section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+
+            .header {
+                page-break-after: avoid;
+                break-after: avoid;
+            }
+
+            .signature-section {
+                page-break-inside: avoid;
+                break-inside: avoid;
+                min-height: 200px;
+                margin-top: 30px;
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .receipt-container {
+                margin: 10px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .org-details,
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .signature-section {
+                flex-direction: column;
+                gap: 2rem;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="receipt-container">
+        <!-- Header Section -->
+        <div class="header">
+            <div class="charity-info">
+                <div class="logo-placeholder">
+                    <img src="https://crowdera-platform.s3.ap-south-1.amazonaws.com/gocrowdera/background/6c2496c4-7dc0-4978-90e6-622dc9c54037_thumbnail_school-logo-2.png"
+                        alt="logo_image">
+                </div>
+                <div class="charity-details">
+                    <h1>Singapore Children's Foundation</h1>
+                    <p>Registered Charity Organization</p>
+                </div>
+            </div>
+            <div class="receipt-number">
+                <div class="label">Receipt No.</div>
+                <div class="value">RC2024-001234</div>
+            </div>
+        </div>
+
+        <!-- Organization Details -->
+        <div class="org-details">
+            <div>
+                <div class="detail-item">
+                    <span class="detail-label">UEN:</span>
+                    <span class="detail-value">201234567D</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">IPC Reg. No:</span>
+                    <span class="detail-value">IPC000123</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Address:</span>
+                    <span class="detail-value">123 Orchard Road, #01-01, Singapore 238853</span>
+                </div>
+            </div>
+            <div>
+                <div class="detail-item">
+                    <span class="detail-label">Website:</span>
+                    <span class="detail-value">www.sgchildrensfoundation.org.sg</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Email:</span>
+                    <span class="detail-value">contact@sgchildrensfoundation.org.sg</span>
+                </div>
+                <div class="detail-item">
+                    <span class="detail-label">Phone:</span>
+                    <span class="detail-value">+65 6123 4567</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Receipt Title and Date -->
+        <div class="receipt-title">
+            <h2>DONATION RECEIPT</h2>
+            <p class="issue-date">📅 Date of Issue: 15/03/2024</p>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="content-grid">
+                <!-- Donor Details -->
+                <div class="section-card donor-section">
+                    <div class="section-header">
+                        <span>👤</span>
+                        <h3>Donor Details</h3>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Full Name (as per NRIC/FIN/UEN)</div>
+                        <div class="field-value">Tan Wei Ming</div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">NRIC/FIN/UEN</div>
+                        <div class="field-value">51234567A</div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Email Address</div>
+                        <div class="field-value">tanweiming@email.com</div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Mailing Address</div>
+                        <div class="field-value">456 Donor Street, #12-34, Singapore 654321</div>
+                    </div>
+                </div>
+
+                <!-- Donation Details -->
+                <div class="section-card donation-section">
+                    <div class="section-header">
+                        <span>💳</span>
+                        <h3>Donation Details</h3>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Amount Donated (SGD)</div>
+                        <div class="field-value amount-highlight">SGD 500.00</div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Amount in Words</div>
+                        <div class="field-value" style="font-style: italic;">Five Hundred Dollars Only</div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Mode of Payment</div>
+                        <div class="field-value">PayNow</div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Transaction/Reference ID</div>
+                        <div class="field-value" style="font-family: monospace; font-size: 0.875rem;">TXM28248315123456
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Purpose</div>
+                        <div class="field-value">General Fund - Children's Education Program</div>
+                    </div>
+                    <div class="field-group">
+                        <div class="field-label">Date of Donation</div>
+                        <div class="field-value">15/03/2024</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tax Deduction Clause -->
+            <div class="tax-section">
+                <h3>📄 Tax Deduction Information</h3>
+                <div class="tax-content">
+                    <p>
+                        <span class="tax-highlight">Tax Deduction Eligibility:</span> If the organization's IPC
+                        registration is active on the date of this donation,
+                        the donor will be eligible for a 2.5x tax deduction under Section 37(3)(c) of the Income Tax Act
+                        1947.If the charity is not an IPC, this donation is gratefully acknowledged but is not eligible
+                        for tax deduction.
+                    </p>
+                    <p>
+                        <span class="tax-highlight">IRAS Submission:</span> Donation details may be auto-submitted to
+                        IRAS using the provided NRIC/FIN/UEN.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Signature Section -->
+            <div class="signature-section">
+                <div class="signatory-info">
+                    <h3>🔖 Authorized Signatory</h3>
+                    <div class="signature-line">
+                        <div class="signatory-name">Sarah Lim Wei Ling</div>
+                        <div class="signatory-title">Executive Director</div>
+                        <div class="signatory-title">For Singapore Children's Foundation</div>
+                    </div>
+                </div>
+
+                <div class="stamp-area">
+                    <div class="stamp-box">
+                        <div style="font-size: 2rem; margin-bottom: 0.25rem;">🔖</div>
+                        <div class="stamp-text">OFFICIAL</div>
+                        <div class="stamp-text">STAMP</div>
+                    </div>
+                    <div class="stamp-text">Digital Signature/Stamp</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>"Your kindness fuels our mission. Thank you for your support."</p>
+        </div>
+    </div>
+</body>
+
+</html>
